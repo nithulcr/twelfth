@@ -513,7 +513,7 @@ textarea:-webkit-autofill {
   animation: 12s infinite shape1;
   opacity: .2;
 }
-/* .shape2 {
+.shape2 {
   position: absolute;
   right: 10%;
   bottom: 20%;
@@ -525,7 +525,8 @@ textarea:-webkit-autofill {
   filter: blur(40px);
   animation: 12s infinite shape2;
   opacity: .5;
-} */
+  display: none;
+}
 @keyframes shape1   {
   0% {
     transform: translateY(-50%) rotate(90deg);
@@ -544,7 +545,7 @@ textarea:-webkit-autofill {
 }
 }
 
-/* @keyframes shape2   {
+@keyframes shape2   {
   0% {
     transform: translateY(-50%) rotate(90deg);
     right: 5%;
@@ -560,7 +561,7 @@ textarea:-webkit-autofill {
   right: 5%;
   bottom: 20%;
 }
-} */
+}
 
 
 .scrolling-text {
@@ -700,6 +701,9 @@ textarea:-webkit-autofill {
     .shape1,.shape2{
     width: 250px;
     height: 250px;
+  }
+  .shape2{
+    display: none;
   }
 }
 @media screen and (max-width: 480px) {

@@ -22,7 +22,7 @@ export default function Hero() {
             <h1 className="text-white uppercase text-center lg:text-left text-4xl font-bold leading-tight tracking-[4px] font-monument mb-1">
               Nithul KP
             </h1>
-            <p className="text-white text-2xl max-w-md text-center lg:text-left mx-auto lg:mx-0">
+            <p className="text-white md:text-2xl max-w-md text-center lg:text-left mx-auto lg:mx-0">
               Frontend Developer & UI Animator
             </p>
           </div>

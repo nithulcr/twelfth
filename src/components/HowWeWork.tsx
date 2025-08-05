@@ -122,7 +122,7 @@ const HowWeWork = () => {
   return (
     <section className="max-w-[1360px] mx-auto py-20 px-5 flex flex-col items-center relative howWeWork">
       <div className="uppercase text-[11px] tracking-[4px] mb-16 text-center">
-        How We Work
+        Areas of expertise
       </div>
 
       <div className="flex flex-col gap-10">

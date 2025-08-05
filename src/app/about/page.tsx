@@ -11,7 +11,7 @@ export default function AboutPage() {
     <div>
       <Header />
       <main>
-         <Banner title="WE ARE TERRAH" backgroundImage="/images/bg-banner.jpg" />
+         <Banner title="About Me" backgroundImage="/images/bg-banner.jpg" />
         <Services />
 
       </main>
