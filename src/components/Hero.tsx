@@ -2,13 +2,7 @@
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
-  const handleOpen = () => {
-    if (typeof window !== 'undefined' && typeof (window as Window & { openOffcanvas?: () => void }).openOffcanvas === 'function') {
-      document.body.classList.add('offcanvas-show');
-      (window as Window & { openOffcanvas?: () => void }).openOffcanvas?.();
-    }
 
-  };
 
   return (
     <section className="relative flex flex-col lg:flex-row   overflow-hidden main-hero">
@@ -23,7 +17,7 @@ export default function Hero() {
         <div className="flex items-center flex-col lg:flex-row justify-between  max-w-[1360px] mx-auto pt-20 px-5 w-full gap-10">
           <div className="">
             <h6 className="text-white uppercase text-center lg:text-left leading-tight tracking-[4px] mb-1">
-             Protfolio
+             Portfolio
             </h6>
             <h1 className="text-white uppercase text-center lg:text-left text-4xl font-bold leading-tight tracking-[4px] font-monument mb-1">
               Nithul KP

@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const navRefs = useRef<HTMLDivElement[]>([]);
+
 
     useEffect(() => {
         document.body.classList.toggle("open", menuOpen);
@@ -15,9 +15,7 @@ export default function Header() {
     const handleLinkClick = () => {
         setMenuOpen(false);
     };
-    const setNavRef = (el: HTMLDivElement | null, index: number) => {
-        if (el) navRefs.current[index] = el;
-    };
+
     return (
         <header className="fixed top-0 inset-x-0 z-50 bg-transparent flex justify-center h-20 p-5 z-999">
             <div className="w-full grid grid-cols-[minmax(5vw,1fr)_minmax(auto,1400px)_minmax(5vw,1fr)] z-1">
