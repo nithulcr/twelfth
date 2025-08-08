@@ -101,7 +101,7 @@ const Works = ({ limit }: WorksProps) => {
                 /* ---------- Card content ---------- */
                 const CardInner = (
                   <div className="relative">
-                    <div className="aspect-[.7/1] w-full overflow-hidden relative">
+                    <div className="aspect-[.8/1] w-full overflow-hidden relative">
                       <Image
                         src={imageUrl}
                         alt={project.title || "Project Image"}

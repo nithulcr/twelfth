@@ -85,8 +85,8 @@ body {
 .section {
     z-index: 20;
     /* border-bottom: 1px solid var(--light-outline); */
-    padding-top:140px;
-    padding-bottom: 140px;
+    padding-top:120px;
+    padding-bottom: 120px;
     position: relative;
 
 }
@@ -503,7 +503,7 @@ textarea:-webkit-autofill {
 .shape1 {
   position: absolute;
   left: 12%;
-  top: 35%;
+  top: 50%;
   transform: translateY(-50%) rotate(45deg);
   width: 550px;
   height: 550px;
@@ -516,16 +516,15 @@ textarea:-webkit-autofill {
 .shape2 {
   position: absolute;
   right: 10%;
-  bottom: 20%;
+  top: 30%;
   transform: translateY(-50%) rotate(45deg);
   width: 450px;
   height: 450px;
   border-radius: 300%;
-  background: linear-gradient(90deg, #5bc6d069 -4.46%, #a0c3446e 66.67%);
+  background: linear-gradient(180deg, var(--orange) -4.46%, var(--blue) 66.67%);
   filter: blur(40px);
   animation: 12s infinite shape2;
-  opacity: .5;
-  display: none;
+  opacity: .1;
 }
 @keyframes shape1   {
   0% {
@@ -642,7 +641,7 @@ textarea:-webkit-autofill {
     }
   }
 
-  .testimonials:before{
+  .testimonials:before, .experience-section:before {
     content: '';
     background: url(/images/bg2.png);
     background-size: cover;

@@ -6,6 +6,8 @@ const Footer = () => {
    return (
       <footer className="pb-[10] md:pt-[100px] pt-[0px] relative ">
          <div className="shape1 z-[-1]"></div>
+         <div className="shape2 z-[-1]"></div>
+
          <div className="max-w-[1360px] mx-auto footer md:p-5 p-4">
             <div className="scrolling-text bg-[#004a891a] backdrop-blur-[10px]">
                <div className="scrolling-text_inner direction-left">

@@ -23,7 +23,7 @@ export default function Header() {
 
                     {/* Logo */}
                     <Link href="/" className="pr-5">
-                        <Image src="/images/logo2.png" alt="Logo" width={160} height={40} className="object-contain" />
+                        <Image src="/images/logo2.png" alt="Logo" width={160} height={40} className="object-contain" />Nitfolio
                     </Link>
 
 
@@ -67,7 +67,7 @@ export default function Header() {
                 <nav className=" min-h-screen flex flex-col justify-center">
                     <Link href="/" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Home</Link>
                     <Link href="/projects" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Projects</Link>
-                    <Link href="services" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Services</Link>
+                    <Link href="services" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>My Skills</Link>
                     <Link href="/about" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>About</Link>
                     <Link href="/contact" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Contact</Link>
                 

@@ -37,7 +37,8 @@ const experiences = [
 
 const ExperienceSection = () => {
     return (
-        <section className="max-w-[1360px] mx-auto px-5 flex flex-col items-center relative section">
+        <section className="px-5 relative section experience-section">
+            <div className="max-w-[1360px] mx-auto px-5 flex flex-col items-center relative">
 
             <div className="sticky sm:top-[80px] sm:top-[85px] mb-10 sm:mb-20 sm:flex  gap-8 justify-between w-full items-center">
                 <div>
@@ -91,7 +92,9 @@ const ExperienceSection = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </div >
+        </section >
+
     );
 };
 

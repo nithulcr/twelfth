@@ -34,17 +34,17 @@ const socialLinks = [
 
 export default function StickySocial() {
   return (
-    <div className="fixed top-1/2 -translate-y-1/2 right-0 z-60 flex flex-col w-[160px]">
+    <div className="fixed top-1/2 -translate-y-1/2 right-0 z-60 flex flex-col w-[140px]">
       {socialLinks.map(({ href, label, Icon }) => (
         <Link
           key={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-gray-800 flex items-center gap-3 text-white font-semibold text-lg transform translate-x-[124px] md:hover:translate-x-0 transition-transform duration-700 "
+          className="group bg-[#ffffff2e] backdrop-blur-sm flex items-center  text-white font-semibold text-lg transform translate-x-[105px] md:hover:translate-x-0 transition-transform duration-700 "
         >
-          <div className="bg-white text-black p-2 transition-transform duration-700 md:group-hover:rotate-[360deg] border-b-gray-400 border-b">
-            <Icon size={20} />
+          <div className=" p-2 ">
+            <Icon size={20} strokeWidth={1} />
           </div>
           <span className="uppercase text-sm font-light">{label}</span>
         </Link>
