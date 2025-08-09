@@ -22,8 +22,8 @@ export default function Header() {
                 <div className="max-w-[1360px] px-5 col-start-2 grid grid-cols-2 lg:grid-cols-3 gap-x-20 items-center w-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
 
                     {/* Logo */}
-                    <Link href="/" className="pr-5">
-                        <Image src="/images/logo2.png" alt="Logo" width={160} height={40} className="object-contain" />
+                    <Link href="/" className="pr-4">
+                        <Image src="/images/logo2.png" alt="Logo" width={170} height={40} className="object-contain" />
                     </Link>
 
 

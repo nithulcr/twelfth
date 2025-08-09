@@ -6,29 +6,43 @@ import {
   Mail,
   MessageCircleMore,
   Phone,
+  Linkedin,
+  Facebook,
+
 } from 'lucide-react';
 
 const socialLinks = [
   {
-    href: 'https://www.instagram.com/terrah.tech/',
+    href: 'https://www.instagram.com/ni_dul_cristiano_dos_santos/',
     label: 'Instagram',
     Icon: Instagram,
   },
   {
-    href: 'https://api.whatsapp.com/send?phone=7356011824',
+    href: 'https://api.whatsapp.com/send?phone=9946844274',
     label: 'WhatsApp',
     Icon: MessageCircleMore,
   },
   {
-    href: 'mailto:terrahconnects@gmail.com',
+    href: 'mailto:nithulcr@gmail.com',
     label: 'Gmail',
     Icon: Mail,
   },
   {
-    href: 'tel:7356011824',
+    href: 'tel:9946844274',
     label: 'Phone',
     Icon: Phone,
   },
+  {
+    href: 'https://www.facebook.com/p/nithul-mouvery-100068865098847/?_rdr',
+    label: 'Facebook',
+    Icon: Facebook,
+  },
+    {
+    href: 'https://www.linkedin.com/in/nithul-kp-894a48234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    label: 'Linkedin',
+    Icon: Linkedin,
+  },
+   
 
 ];
 
