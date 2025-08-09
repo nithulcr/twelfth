@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
             <div className="middle xl:flex grid sm:grid-cols-2 grid-cols-1 py-8  border-gray-600  gap-[50px] bg-[--background-secondary] rounded-[30px] 2xl:p-12 p-9 bg-[#004a891a] backdrop-blur-[10px]">
                <div className="xl:w-1/4 ">
-                  <img src="images//logo.png" alt="" className="w-[170px] mb-8" />
+                  <img src="images//logo2.png" alt="" className="w-[170px] mb-8" />
                   <ul className="flex flex-col gap-4">
                      <li className="font-light flex items-start gap-3">
                         <MapPin className="w-5 h-5 mt-1 text-primary flex-none" strokeWidth={1} />

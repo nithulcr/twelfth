@@ -60,8 +60,8 @@ body {
   position: fixed;
   inset: 0;
   height: 100vh;
-  transition: opacity 0.8s ease, height 0.8s ease;
-  /* background:linear-gradient(36deg, #da3036e3, #0000007d, #00b1c6d6); */
+  transition: opacity 1s ease, height 1s ease;
+  background:linear-gradient(36deg, #da3036cf, #0000007d, #00b1c6d6);
     backdrop-filter: blur(20px);
 }
 
@@ -72,21 +72,21 @@ body {
   overflow: hidden;
 }
 
-.preloader.hidden .brand {
+/* .preloader.hidden .brand {
   transform: scale(0);
-}
+} */
 
 .brand {
   width: 200px;
   object-fit: contain;
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 
 .section {
     z-index: 20;
     /* border-bottom: 1px solid var(--light-outline); */
-    padding-top:120px;
-    padding-bottom: 120px;
+    padding-top:100px;
+    padding-bottom: 100px;
     position: relative;
 
 }
@@ -526,6 +526,20 @@ textarea:-webkit-autofill {
   animation: 12s infinite shape2;
   opacity: .1;
 }
+.shape3 {
+  position: absolute;
+ left: 0%;
+  top: 0%;
+  width: 800px;
+  height: 100%;
+  min-height: 100vh;
+  background: url(/images/bg-shadow1.png);
+  filter: blur(0px);
+  opacity: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .5;
+}
 @keyframes shape1   {
   0% {
     transform: translateY(-50%) rotate(90deg);
@@ -656,6 +670,11 @@ textarea:-webkit-autofill {
     background-position: center;
   }
 @media screen and (max-width: 1024px) {
+  .shape3 {
+  width: 360px;
+  min-height: 100vh;
+
+}
   .circle-link {
 
     top: calc(100% - 70px);

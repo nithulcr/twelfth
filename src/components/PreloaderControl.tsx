@@ -22,7 +22,7 @@ export default function PreloaderControl() {
         preloader.classList.add('hidden');
         document.body.classList.remove('preloader-visible');
         sessionStorage.setItem('preloader-shown', 'true');
-      }, 2000);
+      }, 10000);
 
       return () => clearTimeout(timer);
     } else {

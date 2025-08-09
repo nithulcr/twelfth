@@ -66,13 +66,11 @@ const Works = ({ limit }: WorksProps) => {
           </div>
 
           <p className="text-white/80 text-[17px] leading-relaxed lg:text-right max-w-[650px]">
-           A selection of recent projects showcasing my expertise in responsive design, modern UI/UX, and seamless user interactions. Each project reflects a strong focus on performance, accessibility, and client goals.
+            A selection of recent projects showcasing my expertise in responsive design, modern UI/UX, and seamless user interactions. Each project reflects a strong focus on performance, accessibility, and client goals.
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-
-
           <div className="w-full">
             <div
               className={`grid gap-x-8 gap-y-14 sm:grid-cols-3 md:grid-cols-4 w-full ${limit ? " pb-10" : ""
@@ -119,7 +117,7 @@ const Works = ({ limit }: WorksProps) => {
                         <div className="h-[1px] bg-gray-500 w-12 mx-auto" />
                         <div>{project.tech}</div>
                       </div> */}
-                      
+
                     </div>
                   </div>
                 );
@@ -153,7 +151,7 @@ const Works = ({ limit }: WorksProps) => {
             {limit && (
               <AnimatedButton
                 label="View More Projects? "
-                className="w-fit ml-auto mr-auto mt-16"
+                className="w-fit ml-auto mr-auto mt-8 md:mt-16"
                 href="/projects"
               />
             )}

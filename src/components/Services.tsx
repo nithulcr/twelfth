@@ -66,7 +66,7 @@ const Services = () => {
 
   return (
     <section id="services" className="section">
-      <div className="shape1 z-[-1]"></div>
+      <div className="shape3 z-[-1]"></div>
       <div className="shape2 z-[-1]"></div>
       <div className="grid-wrapper max-w-[1360px] mx-auto px-5">
         <div className="stacked-content">

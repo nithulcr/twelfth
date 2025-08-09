@@ -17,8 +17,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Terrah.',
-  description: 'Empowering Businesses with Innovative IT Solutions',
+  title: 'Nitfolio',
+  description: 'Frontend Developer & UI Animator',
 };
 
 export default function RootLayout({
@@ -39,8 +39,8 @@ export default function RootLayout({
             <Image
               src="/images/logo2.png"
               alt="Terrah logo"
-              width={200}
-              height={80}
+              width={300}
+              height={120}
               className="brand"
             />
           </div>
