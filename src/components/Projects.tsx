@@ -101,15 +101,15 @@ const Works = ({ limit }: WorksProps) => {
                 /* ---------- Card content ---------- */
                 const CardInner = (
                   <div className="relative">
-                    <div className="aspect-[.8/1] w-full overflow-hidden relative">
+                    <div className="aspect-[.85/1] w-full overflow-hidden relative">
                       <Image
                         src={imageUrl}
                         alt={project.title || "Project Image"}
                         fill
-                        className="object-cover h-fit transition-transform duration-500 group-hover:translate-y-[6px]"
+                        className="h-fit transition-transform duration-500 group-hover:translate-y-[6px] object-contain object-top bg-[#ab010f1c]"
                       />
                     </div>
-                    <div className="grid gap-2 text-center absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full backdrop-blur-sm bg-[#16181c73] p-3">
+                    <div className="grid gap-1 text-center absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full backdrop-blur-sm bg-[#16181c73] p-3">
                       <h3 className="text-1xl lg:text-[18px] font-monument">
                         {project.title}
                       </h3>

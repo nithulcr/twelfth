@@ -518,8 +518,8 @@ textarea:-webkit-autofill {
   right: 10%;
   top: 30%;
   transform: translateY(-50%) rotate(45deg);
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   border-radius: 300%;
   background: linear-gradient(180deg, var(--orange) -4.46%, var(--blue) 66.67%);
   filter: blur(40px);

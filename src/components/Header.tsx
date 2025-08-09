@@ -23,7 +23,7 @@ export default function Header() {
 
                     {/* Logo */}
                     <Link href="/" className="pr-5">
-                        <Image src="/images/logo2.png" alt="Logo" width={160} height={40} className="object-contain" />Nitfolio
+                        <Image src="/images/logo2.png" alt="Logo" width={160} height={40} className="object-contain" />
                     </Link>
 
 
