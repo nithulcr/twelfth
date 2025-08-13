@@ -45,7 +45,7 @@ const ExperienceSection = () => {
                     <div className="subtitle text-[11px] tracking-[4px] uppercase text-white">
                         5+ Years of Experience
                     </div>
-                    <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 leading-snug font-medium gradient-text font-monument">
+                    <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 mb-4 leading-snug font-medium gradient-text font-monument">
                         Working Experience
                     </h2>
                 </div>

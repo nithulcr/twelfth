@@ -9,8 +9,7 @@ export default function Hero() {
       {/* Background Wrapper */}
 
       {/* Content Wrapper */}
-      <div className="relative  min-h-[130vh] w-full  pt-30  pb-[35vh] lg:pb-[40vh]  lg:pt-40 flex items-end justify-between w-full bg-cover bg-no-repeat bg-center " style={{
-        backgroundImage: "url('/images/banner3.png')",
+      <div className="relative  min-h-[90vh] lg:min-h-[130vh] w-full  pt-30  pb-[25vh] lg:pb-[40vh]  lg:pt-40 flex items-end justify-between w-full bg-cover bg-no-repeat bg-center hero-bg-img" style={{
         WebkitMaskImage: "linear-gradient(0deg, transparent, #00000047, #000 45vh)",
       }}
       >

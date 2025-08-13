@@ -225,7 +225,7 @@ export default function Testimonials() {
     <section className=" testimonials relative" id="testimonials">
       <div className="py-20 md:py-24 max-w-[1360px] mx-auto px-5 relative">
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-6 md:mb-14 gap-3">
+        <div className="flex flex-col md:flex-row justify-between items-center  mb-6 md:mb-14 gap-3">
           <div className="sm:flex  gap-8 justify-between w-full items-center">
             <div>
               <div className="subtitle text-[11px] tracking-[4px] uppercase text-white">
@@ -239,7 +239,7 @@ export default function Testimonials() {
 
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 hidden md:flex">
             <button
               ref={prevRef}
               className="px-3 py-1 text-[30px] text-[var(--orange)] cursor-pointer"

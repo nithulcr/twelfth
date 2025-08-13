@@ -63,7 +63,13 @@ const Footer = () => (
       <div className="middle xl:flex grid sm:grid-cols-2 grid-cols-1 py-8 border-gray-600 gap-[50px] bg-[--background-secondary] rounded-[30px] 2xl:p-12 p-7 bg-[#004a891a] backdrop-blur-[10px]">
         {/* Logo + Address Section */}
         <div className="xl:w-1/4 ">
-          <img src="images/logo2.png" alt="" className="w-[170px] mb-8" />
+          <img src="images/logo2.png" alt="" className="w-[230px] content-center" />
+
+        </div>
+
+        {/* Quick Links Section */}
+        <div className="xl:w-1/4 ">
+          <h2 className="text-2xl font-medium mb-6">Find Me</h2>
           <ul className="flex flex-col gap-4">
             <li className="font-light flex items-start gap-3">
               <MapPin className="w-5 h-5 mt-1 text-primary flex-none" strokeWidth={1} />
@@ -81,30 +87,27 @@ const Footer = () => (
               <span className="text-md">nithulcr@gmail.com</span>
             </li>
           </ul>
-        </div>
-
-        {/* Quick Links Section */}
-        <div className="xl:w-1/4 ">
-          <h2 className="text-2xl font-medium mb-6">Quick Links</h2>
-          <ul className="flex flex-col gap-3">
-            <li><Link href="/" className="font-light text-md">Home</Link></li>
-            <li><Link href="/about" className="font-light text-md">About</Link></li>
-            <li><Link href="/projects" className="font-light text-md">Projects</Link></li>
-            <li><Link href="/services" className="font-light text-md">Skills</Link></li>
-            <li><Link href="/contact" className="font-light text-md">Contact</Link></li>
-          </ul>
-        </div>
-
-        {/* Skills Section */}
-        <div className="xl:w-1/4 ">
-          <h2 className="text-2xl font-medium mb-6">Skills</h2>
+          {/* <h2 className="text-2xl font-medium mb-6">Skills</h2>
           <ul className="flex flex-col gap-3">
             <li className="font-light text-md">Website Designing</li>
             <li className="font-light text-md">Website Development</li>
             <li className="font-light text-md">Graphic Designing</li>
             <li className="font-light text-md">Portrait Drawing</li>
+          </ul> */}
+        </div>
+        <div className="xl:w-1/4 ">
+          <h2 className="text-2xl font-medium mb-6">Quick Links</h2>
+          <ul className="flex flex-col gap-3">
+            <li><Link href="/" className="font-light text-md">Home</Link></li>
+            <li><Link href="/about" className="font-light text-md">About Me</Link></li>
+            <li><Link href="/projects" className="font-light text-md">My Projects</Link></li>
+            <li><Link href="/services" className="font-light text-md">My Skills</Link></li>
+            <li><Link href="/contact" className="font-light text-md">Contact Me</Link></li>
           </ul>
         </div>
+
+        {/* Skills Section */}
+
 
         {/* Connect with us Section */}
         <div className="xl:w-[22%] ">

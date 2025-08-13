@@ -40,18 +40,18 @@ export default function Header() {
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
-                                    strokeWidth={1} 
+                                    strokeWidth={1}
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
 
                             ) : (
-                               
+
                                 <div className="menu-icon">
-                                     {/* <Image src="/images/hamburger.svg" alt="Open menu" width={30} height={30} className="menu-icon" /> */}
-                                     <span></span>
-                                     <span></span>
-                                     <span></span>
+                                    {/* <Image src="/images/hamburger.svg" alt="Open menu" width={30} height={30} className="menu-icon" /> */}
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
                             )}
                         </div>
@@ -63,14 +63,18 @@ export default function Header() {
             <div className="nav-cover"></div>
 
             {/* Mobile Nav */}
-            <div className={`backdrop-blur-[20px] absolute top-[-100vh]  w-full transition-all duration-500 mobile-nav-menu ${menuOpen ? "top-[0px]" : ""}`}>
-                <nav className=" min-h-screen flex flex-col justify-center">
+            <div
+                className={`absolute  w-full transition-all duration-700 mobile-nav-menu menu-set  top-0 ${menuOpen ? "menu-set-open visible" : "invisible"
+                    }`}
+            >
+                <nav className={` min-h-screen flex flex-col justify-center duration-700 relative ${menuOpen ? "opacity-100 " : "opacity-0  scale-50"
+                    }`}>
                     <Link href="/" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Home</Link>
                     <Link href="/projects" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Projects</Link>
                     <Link href="services" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>My Skills</Link>
                     <Link href="/about" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>About</Link>
                     <Link href="/contact" className="block text-white py-3 px-6 nav-link uppercase text-center text-[5vh]" onClick={handleLinkClick}>Contact</Link>
-                
+
                 </nav>
             </div>
         </header>

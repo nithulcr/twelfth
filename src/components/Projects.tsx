@@ -60,7 +60,7 @@ const Works = ({ limit }: WorksProps) => {
             <div className="subtitle text-[11px] tracking-[4px] uppercase text-white">
               All Websites
             </div>
-            <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 leading-snug font-medium gradient-text font-monument">
+            <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 mb-4 leading-snug font-medium gradient-text font-monument">
               My Latest Works
             </h2>
           </div>
@@ -83,18 +83,28 @@ const Works = ({ limit }: WorksProps) => {
                 const imageUrl = makeMediaUrl(rawImageUrl) || "/images/seo.jpg";
 
                 /* ---------- Resolve link ---------- */
-                const slug = project.slug?.trim();
-                const externalUrl = project.url?.trim();
-                const internalHref = slug
-                  ? `/projects/${slug.replace(/^\/+/, "")}`
-                  : null;
-                const isAbsolute =
-                  typeof externalUrl === "string" &&
-                  /^(https?:)?\/\//i.test(externalUrl);
-                const projectLink = internalHref || (isAbsolute ? externalUrl : null);
-                const isExternal = projectLink
-                  ? /^https?:\/\//i.test(projectLink)
-                  : false;
+/* ---------- Resolve link safely ---------- */
+const slug = project.slug?.trim();
+const externalUrl = project.url?.trim();
+
+// Detect external URLs (absolute links)
+const isAbsolute = typeof externalUrl === "string" && /^https?:\/\//i.test(externalUrl);
+
+let projectLink: string | null = null;
+let isExternal = false;
+
+if (isAbsolute) {
+  // Use the given external link directly
+  projectLink = externalUrl;
+  isExternal = true;
+} else if (slug) {
+  // Build internal link only if slug is present and not an absolute URL
+  const isSlugAbsolute = /^https?:\/\//i.test(slug);
+  projectLink = isSlugAbsolute ? slug : `/projects/${slug.replace(/^\/+/, "")}`;
+  isExternal = isSlugAbsolute;
+}
+
+
 
                 /* ---------- Card content ---------- */
                 const CardInner = (
@@ -128,7 +138,7 @@ const Works = ({ limit }: WorksProps) => {
                     <a
                       key={project.id}
                       href={projectLink}
-                      target={isExternal ? "_blank" : undefined}
+                      target={"_blank" }
                       rel={isExternal ? "noopener noreferrer" : undefined}
                       className="grid gap-4 text-white w-full group collection-item"
                     >

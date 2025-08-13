@@ -31,37 +31,63 @@ const services = [
 
 const Services = () => {
   useEffect(() => {
-   
-      document
-        .querySelectorAll<HTMLElement>(".large-growing-images.small")
-        .forEach((wrapper) => {
-          const left = wrapper.querySelector<HTMLElement>(".growing-image.small");
-          const right = wrapper.querySelector<HTMLElement>(".growing-image.right");
+    document
+      .querySelectorAll<HTMLElement>(".counter")
+      .forEach((counter) => {
+        const target = parseInt(counter.dataset.target || "0", 10);
 
-          if (!left || !right) return;
-
-          const tl = gsap.timeline({
+        gsap.fromTo(counter,
+          { innerText: 0 },
+          {
+            innerText: target,
+            duration: 2,
+            ease: "power1.out",
+            snap: { innerText: 1 },
             scrollTrigger: {
-              trigger: wrapper,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
+              trigger: counter,
+              start: "top bottom-=100",
+              once: true, // run only once
             },
-          });
+            onUpdate: function () {
+              counter.innerText = Math.floor(Number(counter.innerText)).toString();
+            }
+          }
+        );
+      });
+  }, []);
 
-          tl.fromTo(
-            left,
-            { height: "80%" },
-            { height: "35%", ease: "none" },
-            0
-          ).fromTo(
-            right,
-            { height: "20%" },
-            { height: "65%", ease: "none" },
-            0
-          );
+  useEffect(() => {
+
+    document
+      .querySelectorAll<HTMLElement>(".large-growing-images.small")
+      .forEach((wrapper) => {
+        const left = wrapper.querySelector<HTMLElement>(".growing-image.small");
+        const right = wrapper.querySelector<HTMLElement>(".growing-image.right");
+
+        if (!left || !right) return;
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
         });
- 
+
+        tl.fromTo(
+          left,
+          { height: "80%" },
+          { height: "35%", ease: "none" },
+          0
+        ).fromTo(
+          right,
+          { height: "20%" },
+          { height: "65%", ease: "none" },
+          0
+        );
+      });
+
   }, []);
 
   return (
@@ -75,11 +101,10 @@ const Services = () => {
               {services.map((service, idx) => (
                 <div
                   key={idx}
-                  className={`service-item flex flex-col lg:grid gap-x-20 items-center w-full  ${
-                    service.reverse
+                  className={`service-item flex flex-col lg:grid gap-x-20 items-center w-full  ${service.reverse
                       ? "lg:grid-cols-[1fr_50%] flex-col-reverse"
                       : "lg:grid-cols-[50%_1fr] "
-                  }`}
+                    }`}
                 >
                   {!service.reverse && (
                     <ServiceMedia
@@ -104,17 +129,18 @@ const Services = () => {
                       </p>
                       <div className="flex gap-4 py-8">
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument">5+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument" ><span className="counter" data-target="5">0</span>+</span>
                           <span>Years of Experience</span>
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument">100+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument "><span className="counter" data-target="100">0</span>+</span>
                           <span>Website Completed</span>
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument">10+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument "><span className="counter" data-target="10">0</span>+</span>
                           <span>Technologies Mastered</span>
                         </div>
+
                       </div>
                       {/* <div className="max-w-[calc(100vw-40px)]">
                       {service.marquee && (
@@ -126,7 +152,7 @@ const Services = () => {
                       )}
                       </div> */}
                     </div>
-                    <AnimatedButton href="images/resume.pdf" label="Download My CV" className="mt-8 w-fit" />
+                    <AnimatedButton href="images/resume.pdf" label="Download My CV" className="mt-4 lg:[mt-8] w-fit" />
                   </div>
 
                   {service.reverse && (

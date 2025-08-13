@@ -81,7 +81,9 @@ body {
   object-fit: contain;
   transition: transform 1s ease;
 }
-
+.hero-bg-img{
+  background-image: url(/images/banner3.png);
+}
 .section {
     z-index: 20;
     /* border-bottom: 1px solid var(--light-outline); */
@@ -126,8 +128,7 @@ body {
   backdrop-filter: blur(5px);
 }
 
-.scroll-down .nav-cover,
-.open .nav-cover {
+.scroll-down .nav-cover{
   inset: 0% 0% 0%;
 
 }
@@ -138,7 +139,7 @@ body.open {
 }
 
 body.open main {
-  filter: brightness(.6) blur(1.5px);
+  /* filter: brightness(.6) blur(1.5px); */
 
   pointer-events: none;
 }
@@ -669,6 +670,34 @@ textarea:-webkit-autofill {
     transform: translate(-50%, -50%);
     background-position: center;
   }
+
+  .menu-set:before{
+content: '';
+top: -100px;
+    right: -100px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transition: .7s;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(6px);
+    background: #0000003b;
+    border-radius: 0 0 0 400%;
+    opacity: 0;
+    visibility: hidden;
+
+  }
+    .menu-set.menu-set-open:before{
+top: 0px;
+    right: 0px;
+width: 100%;
+height: 100%;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: -1;
+
+  }
 @media screen and (max-width: 1024px) {
   .shape3 {
   width: 360px;
@@ -739,10 +768,17 @@ textarea:-webkit-autofill {
     }
     .section {
 
-    padding-top:80px;
-    padding-bottom: 80px;
+    padding-top:50px;
+    padding-bottom: 50px;
 
 
+}
+.hero-bg-img{
+  background-image: url(/images/banner3mob.png);
+}
+.scrolling-text {
+    border-radius: 60px;
+    margin: auto auto 20px;
 }
 }
 
