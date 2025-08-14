@@ -13,8 +13,7 @@ const services = [
     subtitle: "Get to Know Me",
     description:
       "I'm Nithul K.P, a creative and results-driven Frontend Developer with over 5+ years of experience building 100+ responsive, user-friendly websites and web applications. I specialize in crafting seamless digital experiences using modern technologies like HTML, CSS, JavaScript, React, Next.js, Shopify, WordPress ets...",
-    videoSrc: "/images/terrah_ss.mp4",
-    bgClassLeft: "seven",
+  
     bgClassRight: "eight",
     reverse: true,
     marquee: [
@@ -95,8 +94,6 @@ const Services = () => {
                 >
                   {!service.reverse && (
                     <ServiceMedia
-                      videoSrc={service.videoSrc}
-                      bgClassLeft={service.bgClassLeft}
                       bgClassRight={service.bgClassRight}
                     />
                   )}
@@ -158,8 +155,6 @@ const Services = () => {
 
                   {service.reverse && (
                     <ServiceMedia
-                      videoSrc={service.videoSrc}
-                      bgClassLeft={service.bgClassLeft}
                       bgClassRight={service.bgClassRight}
                     />
                   )}
@@ -174,27 +169,15 @@ const Services = () => {
 };
 
 const ServiceMedia = ({
-  videoSrc,
-  bgClassLeft,
   bgClassRight,
 }: {
-  videoSrc: string;
-  bgClassLeft: string;
   bgClassRight: string;
 }) => (
   <div className="service-image w-full">
     <div className="large-growing-images small flex gap-4 w-full">
       <div className="growing-image right relative" style={{ width: "80%" }}>
         <div className={`growing-background ${bgClassRight} absolute inset-0`}>
-          <video
-            src={videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover"
-          />
+          
         </div>
       </div>
     </div>
