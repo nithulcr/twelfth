@@ -69,8 +69,8 @@ const Services = () => {
         },
       }).fromTo(
         growImageRight,
-        { width: "80%" },
-        { width: "100%", ease: "none" }
+        { width: "100%" },
+        { width: "90%", ease: "none" }
       );
     });
   }, []);
@@ -173,9 +173,9 @@ const ServiceMedia = ({
 }: {
   bgClassRight: string;
 }) => (
-  <div className="service-image w-full">
+  <div className="service-image w-full hidden lg:block">
     <div className="large-growing-images small flex gap-4 w-full">
-      <div className="growing-image right relative" style={{ width: "80%" }}>
+      <div className="growing-image right relative" style={{ width: "100%" }}>
         <div className={`growing-background ${bgClassRight} absolute inset-0`}>
           
         </div>

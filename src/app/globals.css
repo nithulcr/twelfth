@@ -286,7 +286,8 @@ body.open main {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background-position: top;
+  background-position: top right;
+  
 }
 
 /* .growing-background.seven {
@@ -294,7 +295,7 @@ body.open main {
 } */
 
 .growing-background.eight {
-  background-image: url("/images/pic.jpg");
+  background-image: url("/images/pic2.png");
   /* opacity: .7; */
 }
 
@@ -303,9 +304,9 @@ body.open main {
 }
   */
     .large-growing-images.small {
-      height: 35vw;
+      min-height: 40vw;
       overflow: hidden;
-      min-height: 400px;
+      /* min-height: 400px; */
       justify-content: flex-end;
     }
   .service-info ul {
