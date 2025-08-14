@@ -36,6 +36,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 .gradient-text {
   background: linear-gradient(90deg, var(--orange), var(--blue));
   -webkit-background-clip: text;
@@ -70,6 +71,40 @@ body {
   height: 0;
   pointer-events: none;
   overflow: hidden;
+}
+
+
+
+.blob {
+  pointer-events: none;
+  position: fixed;
+  z-index: 99;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, var(--blue) 0%, var(--orange) 80%, transparent 100%);
+  filter: blur(60px);
+  transition: all 450ms ease-out;
+  transform: translate(calc(-50% + 35px), -50%);
+  overflow: visible;
+  border-radius: 50%;
+}
+
+
+
+.blob::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: #0060d1;
+  transform: translate(-50%, -50%);
+  transform-origin: left center;
+}
+
+.blob {
+  mix-blend-mode: screen;
 }
 
 /* .preloader.hidden .brand {
@@ -244,9 +279,7 @@ body.open main {
     border-radius: 0;
     cursor: pointer;
   }
-.large-growing-images{
-  filter: brightness(1.05) contrast(1.1) hue-rotate(33deg);
-}
+
 .growing-background {
   background-repeat: no-repeat;
   background-size: cover;
@@ -261,7 +294,7 @@ body.open main {
 } */
 
 .growing-background.eight {
-  background-image: url("/images/terrah_ss_img.png");
+  background-image: url("/images/pic.jpg");
   /* opacity: .7; */
 }
 
@@ -273,6 +306,7 @@ body.open main {
       height: 35vw;
       overflow: hidden;
       min-height: 400px;
+      justify-content: flex-end;
     }
   .service-info ul {
     padding-left: 30px;
@@ -698,6 +732,8 @@ height: 100%;
     z-index: -1;
 
   }
+
+
 @media screen and (max-width: 1024px) {
   .shape3 {
   width: 360px;
@@ -779,6 +815,18 @@ height: 100%;
 .scrolling-text {
     border-radius: 60px;
     margin: auto auto 20px;
+}
+.menu-icon span {
+    width: 24px;
+}
+.menu-icon span:nth-child(1){
+  width: 15px;
+}
+.menu-icon {
+    gap: 5px;
+}
+.menu-icon span:nth-child(3){
+  width: 15px;
 }
 }
 

@@ -7,6 +7,8 @@ import ContactOffcanvas from '@/components/ContactOffcanvas';
 import PreloaderControl from '@/components/PreloaderControl';
 import Image from 'next/image';
 import StickySocial from '@/components/StickySocial';
+import BlobCursor from '@/components/BlobCursor';
+
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -33,6 +35,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
       <body>
+        <BlobCursor />
         {/* Preloader */}
         <div className="preloader">
           <div className="preloader-center">

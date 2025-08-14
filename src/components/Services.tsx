@@ -8,7 +8,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-
   {
     title: "About Me",
     subtitle: "Get to Know Me",
@@ -31,63 +30,50 @@ const services = [
 
 const Services = () => {
   useEffect(() => {
-    document
-      .querySelectorAll<HTMLElement>(".counter")
-      .forEach((counter) => {
-        const target = parseInt(counter.dataset.target || "0", 10);
+    // Animate the counters on scroll once
+    document.querySelectorAll<HTMLElement>(".counter").forEach((counter) => {
+      const target = parseInt(counter.dataset.target || "0", 10);
 
-        gsap.fromTo(counter,
-          { innerText: 0 },
-          {
-            innerText: target,
-            duration: 2,
-            ease: "power1.out",
-            snap: { innerText: 1 },
-            scrollTrigger: {
-              trigger: counter,
-              start: "top bottom-=100",
-              once: true, // run only once
-            },
-            onUpdate: function () {
-              counter.innerText = Math.floor(Number(counter.innerText)).toString();
-            }
-          }
-        );
-      });
+      gsap.fromTo(
+        counter,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 2,
+          ease: "power1.out",
+          snap: { innerText: 1 },
+          scrollTrigger: {
+            trigger: counter,
+            start: "top bottom-=100",
+            once: true,
+          },
+          onUpdate: function () {
+            counter.innerText = Math.floor(Number(counter.innerText)).toString();
+          },
+        }
+      );
+    });
   }, []);
 
   useEffect(() => {
+    // Animate the single growing image width on scroll
+    document.querySelectorAll<HTMLElement>(".large-growing-images.small").forEach((wrapper) => {
+      const growImageRight = wrapper.querySelector<HTMLElement>(".growing-image.right");
+      if (!growImageRight) return;
 
-    document
-      .querySelectorAll<HTMLElement>(".large-growing-images.small")
-      .forEach((wrapper) => {
-        const left = wrapper.querySelector<HTMLElement>(".growing-image.small");
-        const right = wrapper.querySelector<HTMLElement>(".growing-image.right");
-
-        if (!left || !right) return;
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: wrapper,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        tl.fromTo(
-          left,
-          { height: "80%" },
-          { height: "35%", ease: "none" },
-          0
-        ).fromTo(
-          right,
-          { height: "20%" },
-          { height: "65%", ease: "none" },
-          0
-        );
-      });
-
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: wrapper,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      }).fromTo(
+        growImageRight,
+        { width: "80%" },
+        { width: "100%", ease: "none" }
+      );
+    });
   }, []);
 
   return (
@@ -101,10 +87,11 @@ const Services = () => {
               {services.map((service, idx) => (
                 <div
                   key={idx}
-                  className={`service-item flex flex-col lg:grid gap-x-20 items-center w-full  ${service.reverse
+                  className={`service-item flex flex-col lg:grid gap-x-20 items-center w-full ${
+                    service.reverse
                       ? "lg:grid-cols-[1fr_50%] flex-col-reverse"
                       : "lg:grid-cols-[50%_1fr] "
-                    }`}
+                  }`}
                 >
                   {!service.reverse && (
                     <ServiceMedia
@@ -124,33 +111,47 @@ const Services = () => {
                           {service.subtitle}
                         </h2>
                       </div>
-                      <p className="text-white/80 text-[17px] leading-relaxed">
-                        {service.description}
-                      </p>
+                      <p className="text-white/80 text-[17px] leading-relaxed">{service.description}</p>
                       <div className="flex gap-4 py-8">
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument" ><span className="counter" data-target="5">0</span>+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument">
+                            <span className="counter" data-target="5">
+                              0
+                            </span>
+                            +
+                          </span>
                           <span>Years of Experience</span>
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument "><span className="counter" data-target="100">0</span>+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument ">
+                            <span className="counter" data-target="100">
+                              0
+                            </span>
+                            +
+                          </span>
                           <span>Website Completed</span>
                         </div>
                         <div className="flex flex-col text-left">
-                          <span className="text-3xl pb-2 gradient-text font-monument "><span className="counter" data-target="10">0</span>+</span>
+                          <span className="text-3xl pb-2 gradient-text font-monument ">
+                            <span className="counter" data-target="10">
+                              0
+                            </span>
+                            +
+                          </span>
                           <span>Technologies Mastered</span>
                         </div>
-
                       </div>
-                      {/* <div className="max-w-[calc(100vw-40px)]">
-                      {service.marquee && (
-                        <ul className="text-white/70 mt-4 list-disc text-[17px] list-inside">
-                          {service.marquee.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
-                      </div> */}
+                      {/* Uncomment if needed
+                      <div className="max-w-[calc(100vw-40px)]">
+                        {service.marquee && (
+                          <ul className="text-white/70 mt-4 list-disc text-[17px] list-inside">
+                            {service.marquee.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                      */}
                     </div>
                     <AnimatedButton href="images/resume.pdf" label="Download My CV" className="mt-4 lg:[mt-8] w-fit" />
                   </div>
@@ -172,7 +173,6 @@ const Services = () => {
   );
 };
 
-
 const ServiceMedia = ({
   videoSrc,
   bgClassLeft,
@@ -183,9 +183,9 @@ const ServiceMedia = ({
   bgClassRight: string;
 }) => (
   <div className="service-image w-full">
-    <div className="large-growing-images small flex flex-col gap-4 w-full">
-      <div className="growing-image small relative w-full" style={{ height: "80%" }}>
-        <div className={`growing-background ${bgClassLeft} absolute inset-0`}>
+    <div className="large-growing-images small flex gap-4 w-full">
+      <div className="growing-image right relative" style={{ width: "80%" }}>
+        <div className={`growing-background ${bgClassRight} absolute inset-0`}>
           <video
             src={videoSrc}
             autoPlay
@@ -196,9 +196,6 @@ const ServiceMedia = ({
             className="w-full h-full object-cover"
           />
         </div>
-      </div>
-      <div className="growing-image right relative w-full" style={{ height: "20%" }}>
-        <div className={`growing-background ${bgClassRight} absolute inset-0`} />
       </div>
     </div>
   </div>

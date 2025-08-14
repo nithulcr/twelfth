@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ["var(--font-montserrat)", "sans-serif"],
-        monument: ['MonumentExtended', 'sans-serif'],
+        monument: ['MonumentExtended', 'sans-serif']
       },
     },
   },
