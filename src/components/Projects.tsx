@@ -163,7 +163,7 @@ const Works = ({ limit }: WorksProps) => {
                 label="View More Projects? "
                 className="w-fit ml-auto mr-auto mt-8 md:mt-16"
                 href="/projects"
-                target="_self"
+                
               />
             )}
           </div>

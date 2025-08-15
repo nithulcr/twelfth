@@ -309,7 +309,7 @@ body.open main {
 } */
 
 .growing-background.eight {
-  background-image: url("/images/1.jpg");
+  background-image: url("/images/1.png");
   opacity: .5;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
 }

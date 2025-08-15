@@ -62,7 +62,7 @@ const ExperienceSection = () => {
                         className={`grid md:grid-cols-3 gap-4 lg:gap-8 gradient-border rounded-[30px] sm:p-10 p-7 sticky ${i === 0
                             ? "sm:top-[240px] top-[80px]"
                             : i === 1
-                                ? "sm:top-[260px] top-[145px]"
+                                ? "sm:top-[270px] top-[145px]"
                                 : "sm:top-[300px] top-[205px]"
                             }`}
                     >
