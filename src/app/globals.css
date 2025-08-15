@@ -201,13 +201,25 @@ body.open main {
   width: 30px;
   height: .1rem;
   background-color: white;
+  max-width: 100%;
 }
 .menu-icon span:nth-child(1){
   width: 20px;
+  animation: widthGrow 1.5s ease-in-out infinite alternate;
 }
 .menu-icon span:nth-child(3){
-  width: 20px;
+  width: 16px;
   margin-left: auto;
+  animation: widthGrow 1.5s ease-in-out infinite alternate;
+}
+@keyframes widthGrow {
+  0% {
+    width: 16px;
+  }
+  100% {
+    width: 100%;
+      background-color: #bbbbbb;
+  }
 }
 .main-hero:before {
     content: "";
