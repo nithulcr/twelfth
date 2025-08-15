@@ -51,6 +51,10 @@ export default function AnimatedButton({
     };
   }, []);
 
+  // Determine if link is external
+  const isExternal =
+    href && /^https?:\/\//i.test(href);
+
   // 👉 If "type" is provided, render a <button>
   if (type) {
     return (
@@ -68,17 +72,17 @@ export default function AnimatedButton({
 
   // 👉 Otherwise, render as <a>
   return (
-<a
-    ref={buttonRef as React.RefObject<HTMLAnchorElement>}
-    onClick={onClick}
-    href={href}
-    target={href ? "_blank" : undefined}
-    rel={href ? "noopener noreferrer" : undefined}
-    className={clsx("button", className)}
-    download={href?.endsWith(".pdf") ? true : undefined}
-  >
-    <div ref={outlineRef} className="button-outline"></div>
-    <div className="button-text">{label}</div>
-  </a>
+    <a
+      ref={buttonRef as React.RefObject<HTMLAnchorElement>}
+      onClick={onClick}
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className={clsx("button", className)}
+      download={href?.endsWith(".pdf") ? true : undefined}
+    >
+      <div ref={outlineRef} className="button-outline"></div>
+      <div className="button-text">{label}</div>
+    </a>
   );
 }

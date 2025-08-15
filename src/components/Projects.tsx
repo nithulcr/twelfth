@@ -58,7 +58,7 @@ const Works = ({ limit }: WorksProps) => {
         <div className="mb-10 sm:mb-20 sm:flex  gap-8 justify-between w-full items-center">
           <div>
             <div className="subtitle text-[11px] tracking-[4px] uppercase text-white">
-              All Websites
+              Best Websites
             </div>
             <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 mb-4 leading-snug font-medium gradient-text font-monument">
               My Latest Works
@@ -83,26 +83,26 @@ const Works = ({ limit }: WorksProps) => {
                 const imageUrl = makeMediaUrl(rawImageUrl) || "/images/seo.jpg";
 
                 /* ---------- Resolve link ---------- */
-/* ---------- Resolve link safely ---------- */
-const slug = project.slug?.trim();
-const externalUrl = project.url?.trim();
+                /* ---------- Resolve link safely ---------- */
+                const slug = project.slug?.trim();
+                const externalUrl = project.url?.trim();
 
-// Detect external URLs (absolute links)
-const isAbsolute = typeof externalUrl === "string" && /^https?:\/\//i.test(externalUrl);
+                // Detect external URLs (absolute links)
+                const isAbsolute = typeof externalUrl === "string" && /^https?:\/\//i.test(externalUrl);
 
-let projectLink: string | null = null;
-let isExternal = false;
+                let projectLink: string | null = null;
+                let isExternal = false;
 
-if (isAbsolute) {
-  // Use the given external link directly
-  projectLink = externalUrl;
-  isExternal = true;
-} else if (slug) {
-  // Build internal link only if slug is present and not an absolute URL
-  const isSlugAbsolute = /^https?:\/\//i.test(slug);
-  projectLink = isSlugAbsolute ? slug : `/projects/${slug.replace(/^\/+/, "")}`;
-  isExternal = isSlugAbsolute;
-}
+                if (isAbsolute) {
+                  // Use the given external link directly
+                  projectLink = externalUrl;
+                  isExternal = true;
+                } else if (slug) {
+                  // Build internal link only if slug is present and not an absolute URL
+                  const isSlugAbsolute = /^https?:\/\//i.test(slug);
+                  projectLink = isSlugAbsolute ? slug : `/projects/${slug.replace(/^\/+/, "")}`;
+                  isExternal = isSlugAbsolute;
+                }
 
 
 
@@ -138,7 +138,7 @@ if (isAbsolute) {
                     <a
                       key={project.id}
                       href={projectLink}
-                      target={"_blank" }
+                      target={"_blank"}
                       rel={isExternal ? "noopener noreferrer" : undefined}
                       className="grid gap-4 text-white w-full group collection-item"
                     >
@@ -163,6 +163,7 @@ if (isAbsolute) {
                 label="View More Projects? "
                 className="w-fit ml-auto mr-auto mt-8 md:mt-16"
                 href="/projects"
+                target="_self"
               />
             )}
           </div>

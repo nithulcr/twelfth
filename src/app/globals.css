@@ -79,28 +79,42 @@ body {
   pointer-events: none;
   position: fixed;
   z-index: 99;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: radial-gradient(circle, var(--blue) 0%, var(--orange) 80%, transparent 100%);
   filter: blur(60px);
   transition: all 450ms ease-out;
-  transform: translate(calc(-50% + 35px), -50%);
   overflow: visible;
   border-radius: 50%;
+  
+
+
 }
 
-
+@keyframes blobPulse {
+  0% {
+    transform:  scale(1);
+  }
+  50% {
+    transform:  scale(1.5);
+  }
+  100% {
+    transform:  scale(1);
+  }
+}
 
 .blob::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: #0060d1;
   transform: translate(-50%, -50%);
   transform-origin: left center;
+    animation: blobPulse 1.2s ease-in-out infinite;
+    border-radius: 50%;
 }
 
 .blob {
@@ -286,7 +300,7 @@ body.open main {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background-position: top right;
+  background-position: center right;
   
 }
 
@@ -295,8 +309,9 @@ body.open main {
 } */
 
 .growing-background.eight {
-  background-image: url("/images/pic2.png");
-  /* opacity: .7; */
+  background-image: url("/images/1.jpg");
+  opacity: .5;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
 }
 
 /* .growing-background.bg-static {
@@ -551,7 +566,7 @@ textarea:-webkit-autofill {
 }
 .shape2 {
   position: absolute;
-  right: 10%;
+  right: 14%;
   top: 30%;
   transform: translateY(-50%) rotate(45deg);
   width: 350px;

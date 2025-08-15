@@ -62,7 +62,7 @@ const Footer = () => (
       {/* Footer Main Grid */}
       <div className="middle xl:flex grid sm:grid-cols-2 grid-cols-1 py-8 border-gray-600 gap-[50px] bg-[--background-secondary] rounded-[30px] 2xl:p-12 p-7 bg-[#004a891a] backdrop-blur-[10px]">
         {/* Logo + Address Section */}
-        <div className="xl:w-1/4 ">
+        <div className="xl:w-1/4 content-center">
           <img src="images/logo2.png" alt="" className="w-[230px] content-center" />
 
         </div>
@@ -111,7 +111,7 @@ const Footer = () => (
 
         {/* Connect with us Section */}
         <div className="xl:w-[22%] ">
-          <h2 className="text-2xl font-medium mb-6">Connect with us</h2>
+          <h2 className="text-2xl font-medium mb-6">Connect with Me</h2>
           <ul className="flex flex-col gap-4">
             {socialLinks.map(({ href, label, Icon }, index) => (
               <li key={label + index} className="font-light flex items-center gap-4">

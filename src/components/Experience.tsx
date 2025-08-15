@@ -60,10 +60,10 @@ const ExperienceSection = () => {
                     <div
                         key={exp.id}
                         className={`grid md:grid-cols-3 gap-4 lg:gap-8 gradient-border rounded-[30px] sm:p-10 p-7 sticky ${i === 0
-                            ? "sm:top-[240px] top-[100px]"
+                            ? "sm:top-[240px] top-[80px]"
                             : i === 1
-                                ? "sm:top-[260px] top-[195px]"
-                                : "sm:top-[300px] top-[255px]"
+                                ? "sm:top-[260px] top-[145px]"
+                                : "sm:top-[300px] top-[205px]"
                             }`}
                     >
                         <div className="md:order-last w-full lg:w-auto flex justify-center">
@@ -81,7 +81,7 @@ const ExperienceSection = () => {
                             <h5 className="md:text-3xl text-2xl font-semibold mb-3 mt-3">
                                 {exp.title}
                             </h5>
-                            <span className="text-lg text-[var(--blue)] mb-2">
+                            <span className="text-md md:text-lg text-[var(--blue)] mb-2">
                                 {exp.position}
                             </span>
                             <p className="sm:text-md text-sm text-gray-400 sm:leading-[24px]">
