@@ -7,7 +7,7 @@ const topLogos = [
 
 const LogoSlider = () => {
   return (
-    <div className="grid  mt-[-20vh] z-50 relative">
+    <div className="grid   z-50 relative">
       {/* Top Marquee */}
       <div className="overflow-hidden whitespace-nowrap 
 ">

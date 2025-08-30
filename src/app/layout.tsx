@@ -6,7 +6,8 @@ import LenisProvider from '@/components/LenisProvider';
 import ContactOffcanvas from '@/components/ContactOffcanvas';
 import PreloaderControl from '@/components/PreloaderControl';
 import Image from 'next/image';
-import StickySocial from '@/components/StickySocial';
+
+
 import BlobCursor from '@/components/BlobCursor';
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <head>
         {/* ✅ Add favicon using your file */}
         <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <link href="https://fonts.cdnfonts.com/css/dirtyline-36daysoftype-2022" rel="stylesheet" />
       </head>
       <body>
         <BlobCursor />
@@ -40,16 +42,16 @@ export default function RootLayout({
         <div className="preloader">
           <div className="preloader-center">
             <Image
-              src="/images/logo2.png"
+              src="/images/logo.webp"
               alt="Terrah logo"
               width={300}
-              height={120}
+              height={80}
               className="brand"
             />
           </div>
         </div>
 
-        <StickySocial />
+        {/* <StickySocial /> */}
         <PreloaderControl />
 
         <LenisProvider>

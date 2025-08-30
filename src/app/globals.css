@@ -4,14 +4,15 @@
 @tailwind utilities;
 
 :root {
-  --light-outline: #eff9fc1a;
-  --background: #12021b;
-  --extra-dark-background: #04090c;
+  --light-outline: #2c2d30;
+  --background: #121315;
+  --background2: #17181b;
   --dark-outline: #d8e2f0;
   --white: rgb(255 255 255);
   --foreground: #171717;
-  --orange:#ff0008;
-  --blue:#004a89;
+  --orange:#c5fcfc;
+  --blue:#22977e;
+  --border:#c4f64a;
 }
 
 @theme inline {
@@ -31,20 +32,56 @@
 
 @font-face {
   font-family: 'MonumentExtended';
-  src: url('/fonts/MonumentExtended-Regular.otf') format('opentype');
+  src: url('/fonts/NORSH-STAMP.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
+.filling-text {
+  position: relative;
+  overflow: visible;
+  display: inline-block;
+}
+.fade-up-css {
+  will-change: transform, opacity;
+  animation: fade-up-css 1s ease;
+}
+
+@keyframes fade-up-css {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.filling-text .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%; /* initial clipped width */
+  background: linear-gradient(90deg, var(--border), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+
 
 .gradient-text {
-  background: linear-gradient(90deg, var(--orange), var(--blue));
+  background: linear-gradient(90deg, var(--border), var(--blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .font-monument {
   font-family: 'MonumentExtended';
-
+  letter-spacing: 3px;
 }
 
 body {
@@ -62,7 +99,7 @@ body {
   inset: 0;
   height: 100vh;
   transition: opacity 1s ease, height 1s ease;
-  background:linear-gradient(36deg, #da3036cf, #0000007d, #00b1c6d6);
+  background:linear-gradient(36deg, var(--blue), var(--border), var(--orange));
     backdrop-filter: blur(20px);
 }
 
@@ -79,13 +116,14 @@ body {
   pointer-events: none;
   position: fixed;
   z-index: 99;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background: radial-gradient(circle, var(--blue) 0%, var(--orange) 80%, transparent 100%);
   filter: blur(60px);
   transition: all 450ms ease-out;
   overflow: visible;
   border-radius: 50%;
+  opacity: .6;
   
 
 
@@ -126,13 +164,13 @@ body {
 } */
 
 .brand {
-  width: 200px;
+  width: 300px;
   object-fit: contain;
   transition: transform 1s ease;
 }
-.hero-bg-img{
+/* .hero-bg-img{
   background-image: url(/images/banner3.png);
-}
+} */
 .section {
     z-index: 20;
     /* border-bottom: 1px solid var(--light-outline); */
@@ -198,20 +236,21 @@ body.open main {
   gap: 7px;
 }
 .menu-icon span{
-  width: 30px;
+  width: 24px;
   height: .1rem;
   background-color: white;
   max-width: 100%;
 }
-.menu-icon span:nth-child(1){
+.menu-icon span:nth-child(2){
   width: 20px;
+    margin-left: auto;
   animation: widthGrow 1.5s ease-in-out infinite alternate;
 }
-.menu-icon span:nth-child(3){
+/* .menu-icon span:nth-child(3){
   width: 16px;
   margin-left: auto;
   animation: widthGrow 1.5s ease-in-out infinite alternate;
-}
+} */
 @keyframes widthGrow {
   0% {
     width: 16px;
@@ -221,16 +260,7 @@ body.open main {
       background-color: #bbbbbb;
   }
 }
-.main-hero:before {
-    content: "";
-    z-index: 1;
-    background: linear-gradient(transparent, #12021ba3, var(--background));
-    width: 100%;
-    height: 20vh;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+
 /* Each slide has fixed width and spacing */
 .logo-slide {
   min-width: 150px !important;
@@ -261,40 +291,38 @@ body.open main {
 }
 
 .button {
-    border: 1px none var(--light-outline);
-    color: var(--white);
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    border: 2px none var(--border);
+    color: var(--border);
     justify-content: center;
     align-items: center;
-    padding: 22px 42px;
-    font-size: 10px;
+    padding: 22px 30px;
+    font-size: 14px;
     text-decoration: none;
     display: flex;
     position: relative;
     cursor: pointer;
 }
   .button-outline {
-    /* border: 1px solid var(--light-outline);
-    background-color: var(--background); */
-    /* border-radius: 100%; */
+    border: 2px solid var(--border);
+    background-color: var(--background);
+    border-radius: 40px; 
     width: 100%;
-    padding: 30px 50px;
+    padding:  30px;
     position: absolute;
     inset: 0%;
     transition: .3s;
-    border: 1px solid transparent;
+  }
+
+  .button:hover   .button-outline {
+   
+     border: 2px solid transparent;
     background: 
     linear-gradient(var(--background)) padding-box,  
     linear-gradient(90deg, var(--blue), var(--orange) 70%) border-box; 
   }
-
-  /* .button:hover   .button-outline {
-    border: 1px solid var(--dark-outline);
-  } */
-    .button:hover {
+    /* .button:hover {
      background: linear-gradient(90deg, var(--orange), var(--blue));
-  }
+  } */
   .button-text {
     z-index: 25;
     position: relative;
@@ -718,7 +746,7 @@ textarea:-webkit-autofill {
     }
   }
 
-  .testimonials:before, .experience-section:before {
+  /* .testimonials:before, .experience-section:before {
     content: '';
     background: url(/images/bg2.png);
     background-size: cover;
@@ -731,7 +759,7 @@ textarea:-webkit-autofill {
     left: 50%;
     transform: translate(-50%, -50%);
     background-position: center;
-  }
+  } */
 
   .menu-set:before{
 content: '';
@@ -758,6 +786,7 @@ height: 100%;
     opacity: 1;
     visibility: visible;
     z-index: -1;
+    background: var(--background);
 
   }
 
@@ -837,9 +866,7 @@ height: 100%;
 
 
 }
-.hero-bg-img{
-  background-image: url(/images/banner3mob.png);
-}
+
 .scrolling-text {
     border-radius: 60px;
     margin: auto auto 20px;

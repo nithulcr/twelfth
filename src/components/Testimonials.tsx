@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import AnimatedButton from "@/components/AnimatedButton";
 import { makeMediaUrl } from '@/utlis/media';
 import type { Swiper as SwiperClass } from 'swiper';
+import gsap from "gsap";
 
 interface Testimonial {
   id: number;
@@ -80,7 +81,7 @@ export default function Testimonials() {
    * Extract best available image URL from the many shapes Strapi can return.
    * Priority: small -> top-level -> nested attributes.
    */
-  const extractPhotoPath = (p?: StrapiPhoto | null): string | null => {
+  const extractPhotoPath = useCallback((p?: StrapiPhoto | null): string | null => {
     if (!p) return null;
 
     // flat w/ formats
@@ -93,9 +94,9 @@ export default function Testimonials() {
     if (nested?.url) return nested.url;
 
     return null;
-  };
+  }, []);
 
-  const unwrap = (t: RawStrapiItem): Testimonial => {
+  const unwrap = useCallback((t: RawStrapiItem): Testimonial => {
     const rawPath = extractPhotoPath(t.photo);
     const fullPhotoUrl = makeMediaUrl(rawPath);
 
@@ -109,9 +110,8 @@ export default function Testimonials() {
       createdAt: t.createdAt ?? new Date().toISOString(),
       photoUrl: fullPhotoUrl,
     };
-  };
+  }, [extractPhotoPath]);
 
-  // Fetch testimonials
   useEffect(() => {
     const load = async () => {
       try {
@@ -130,7 +130,7 @@ export default function Testimonials() {
       }
     };
     load();
-  }, []);
+  }, [unwrap]);
 
   // Form handlers
   const handleChange = (
@@ -220,22 +220,47 @@ export default function Testimonials() {
       month: 'long',
       day: 'numeric',
     });
+    useEffect(() => {
+    gsap.to(".filling-text .fill", {
+      width: "100%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".filling-text",
+        start: "top 80%",
+        end: "bottom 0%",
+        scrub: true,
+      },
+    });
+      },
+    []);
 
   return (
     <section className=" testimonials relative" id="testimonials">
       <div className="py-20 md:py-24 max-w-[1360px] mx-auto px-5 relative">
 
-        <div className="flex flex-col md:flex-row justify-between items-center  mb-6 md:mb-14 gap-3">
+        <div className="flex flex-col  justify-between items-center  mb-6 md:mb-14 gap-3">
           <div className="sm:flex  gap-8 justify-between w-full items-center">
-            <div>
-              <div className="subtitle text-[11px] tracking-[4px] uppercase text-white">
-                Testimonials
-              </div>
-              <h2 className="heading text-white text-3xl lg:text-[2.3rem] mt-4 leading-snug font-medium gradient-text font-monument">
-                What Clients Say
-              </h2>
-            </div>
+            
+              <div className="flex flex-col mb-8 text-center mx-auto">
+                <h2 className="uppercase slide-right  text-white heading filling-text text-5xl lg:text-[7rem]  leading-none font-medium font-monument relative">
+                  <span className="fill" aria-hidden="true">
+                    What Our
+                  </span>
+                  <span>
+                    What Our
+                  </span>
+                </h2>
+                <h2 className="uppercase slide-right delay-200 text-white heading filling-text text-5xl lg:text-[7rem]  leading-none font-medium font-monument relative">
+                  <span className="fill" aria-hidden="true">
+                    Clients Say
+                  </span>
+                  <span>
+                    Clients Say
+                  </span>
+                </h2>
 
+              </div>
+            
 
           </div>
 
