@@ -165,7 +165,7 @@ gsap.utils.toArray(".fade-up").forEach((elem) => {
                   </div>
 
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-35 w-full">
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 lg:mt-35 w-full">
 
                   <div className="flex flex-col gap-10">
                     <div

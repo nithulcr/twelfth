@@ -134,7 +134,7 @@ const CaseStudy = () => {
               >
 
 
-                <div className="service-info pt-10 lg:pt-0 gap-y-10">
+                <div className="service-info gap-y-10 w-full">
                   <div className="lg:w-[50%]">
                     <div className="flex flex-col mb-8">
                       <h2 className="uppercase slide-right  text-white heading filling-text text-5xl lg:text-[7rem]  leading-none font-medium font-monument relative">
@@ -157,15 +157,18 @@ const CaseStudy = () => {
                     </div>
 
                   </div>
-                  <div className="mt-10  fade-up flex flex-col lg:flex-row justify-between gap-10 items-center">
+                  <div className="mt-10  fade-up flex flex-col md:flex-row justify-between gap-10 items-center">
 
                     <p className="text-[#7ac4b4] text-[20px] leading-snug max-w-[500px]">We roar with creativity, staying updated with the latest tech to make your brand a formidable force in the digital wilderness and deliver exceptional website and app experiences.</p>
-                    <AnimatedButton href="about" label="View All" className=" w-fit min-w-[160px]" />
+                    <div className="hidden md:block">
+                      <AnimatedButton href="about" label="View All" className=" w-fit min-w-[160px]" />
+                    </div>
 
                   </div>
 
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 w-full items-center">
+                <div className="work-row w-full">
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 w-full items-center ">
 
                   <div
 
@@ -175,7 +178,9 @@ const CaseStudy = () => {
                     <p className="mt-4 text-xl font-medium uppercase leading-snug  tracking-wide max-w-[360px]">
                       UI Design, UX, Wireframe
                     </p>
-                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px]" />
+                    <div className="hidden md:block">
+                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px] " />
+                    </div>
                   </div>
                   <div
 
@@ -192,7 +197,7 @@ const CaseStudy = () => {
 
 
                 </div>
-                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 w-full items-center">
+                <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 w-full items-center ">
                   <div
 
                     className="rotate-traslate-to-right  rounded-2xl aspect-[2/1.1]"
@@ -213,9 +218,11 @@ const CaseStudy = () => {
                     <p className="mt-4 text-xl font-medium uppercase leading-snug  tracking-wide max-w-[360px]">
                       UI Design, UX, Wireframe
                     </p>
-                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px]" />
+                     <div className="hidden md:block">
+                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px] " />
+                    </div>
                   </div>
-                  
+
 
 
                 </div>
@@ -229,7 +236,9 @@ const CaseStudy = () => {
                     <p className="mt-4 text-xl font-medium uppercase leading-snug  tracking-wide max-w-[360px]">
                       UI Design, UX, Wireframe
                     </p>
-                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px]" />
+                     <div className="hidden md:block">
+                    <AnimatedButton href="about" label="View Project" className="mt-10 w-fit min-w-[160px] " />
+                    </div>
                   </div>
                   <div
 
@@ -245,6 +254,11 @@ const CaseStudy = () => {
                   </div>
 
 
+                </div>
+                </div>
+
+                <div className="md:hidden mt-10">
+                  <AnimatedButton href="about" label="View All" className=" w-fit min-w-[160px]" />
                 </div>
 
 

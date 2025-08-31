@@ -86,20 +86,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex flex-col overflow-hidden main-hero px-5 lg:px-[4rem] py-20 min-h-[90vh]">
+    <section className="relative flex flex-col overflow-hidden main-hero px-5 lg:px-[4rem] pb-6 pt-15 lg:py-20 min-h-[90vh]">
       <div className="relative hero-banner w-full flex flex-col items-start justify-between bg-cover bg-no-repeat bg-center hero-bg-img">
         <div className="fade-up-css flex items-center flex-col max-w-[1360px] mx-auto pt-20 px-5 w-full gap-5">
-          <h1 className="text-white uppercase text-center text-[10vw] lg:text-[7vw] font-bold leading-none font-monument mb-1 gradient-text">
+          <h1 className="text-white uppercase text-center text-[11vw] lg:text-[7vw] font-bold leading-none font-monument mb-1 gradient-text">
            Twelfth Origin <br></br>Creative Studio
           </h1>
-          <p className="text-white text-md max-w-lg text-center mx-auto lg:mx-0 uppercase">
+          <p className="text-white text-[16px] max-w-lg text-center mx-auto lg:mx-0 uppercase">
           A creative agency that helps marketing and design teams deliver high-volume, on-brand creatives and builds impactful media campaigns that shape brand identity and connect with audiences.
           </p>
           <span className="rounded-full w-7 h-7 border border-gray-700 flex items-center justify-center">
             <ArrowDown className="w-4 h-4 text-gray-700" />
           </span>
         </div>
-        <div className=" md:hidden">
+        <div className=" md:hidden  mx-auto">
           <AnimatedButton
             href="images/resume.pdf"
             label="Get in Touch"

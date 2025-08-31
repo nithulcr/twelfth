@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: 'MonumentExtended';
-  src: url('/fonts/NORSH-STAMP.otf') format('opentype');
+  src: url('/fonts/Sochelia.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -295,7 +295,7 @@ body.open main {
     color: var(--border);
     justify-content: center;
     align-items: center;
-    padding: 22px 30px;
+    padding: 18px 30px;
     font-size: 14px;
     text-decoration: none;
     display: flex;
@@ -307,7 +307,7 @@ body.open main {
     background-color: var(--background);
     border-radius: 40px; 
     width: 100%;
-    padding:  30px;
+    padding:  18px 30px;
     position: absolute;
     inset: 0%;
     transition: .3s;
@@ -789,7 +789,9 @@ height: 100%;
     background: var(--background);
 
   }
-
+.work-row > div:nth-child(odd){
+  flex-direction: column-reverse
+}
 
 @media screen and (max-width: 1024px) {
   .shape3 {
